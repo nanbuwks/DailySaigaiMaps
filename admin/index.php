@@ -8,7 +8,7 @@
 <h1>Daily Saigai Maps  Data Entry</h1>
 <form action=input.php method="GET"> 
 <p>
-<input type=text name=twitterid>tweet ID (数字約18桁)
+<input type=text name=twitterurl>ツィートURL
 <p>
 <input type=text name=twittercode>「ツィートをサイトへ埋め込む」で取得したHTML
 <p>

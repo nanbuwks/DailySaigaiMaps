@@ -124,7 +124,8 @@ $result = mysql_query('select date(datadate) as date, date_format(datadate, "%Y"
 <ul>
 <li>災害時にTwitterで流れる野良情報をマッピングしています。
 <li>OSSで使用、LAMP環境でどこでも簡単に同じようなサービスを立ち上げることができます。
-<li>独自に作成した部分はPublic Domainとします（近日公開予定です）。
+<li>独自に作成した部分はPublic DomainとしてGitHubに公開しています（改変・自分のサーバで使用・改変など誰でも自由にお使いください）。
+<li><a href="https://github.com/nanbuwks/DailySaigaiMaps">https://github.com/nanbuwks/DailySaigaiMaps</a>
 <li>確度の高い情報マップは他に沢山存在します。そちらの補助としてお使いください。
 </ul>
 <h2>ご注意</h2>

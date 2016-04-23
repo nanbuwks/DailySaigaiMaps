@@ -11,20 +11,23 @@
 $latlong=$a_3= explode(",",$_GET[latlong]);
 $latitude=$latlong[0];
 $longtude=$latlong[1];
-
+$twitterpath = parse_url($_GET["twitterurl"])["path"];
+$twitterid =  substr($twitterpath,strrpos( $twitterpath , '/' )+1 );
+echo $twitterid;
 
 include 'dbconnect.php';
 
- $result = mysql_query('select twittercode from incident where twitterid='.$_GET["twitterid"].';');
+ $result = mysql_query('select twittercode from incident where twitterid='.$twitterid.';');
  if ( 0 != mysql_num_rows($result) ) {
    echo  "<hr><h1>既に登録されています</h1>";
    $row = mysql_fetch_assoc($result);
    echo ($row['twittercode']);
 } else {
 
-$querystring ='insert INTO incident (twitterid,twittercode,latitude,longtude,address,datadate,inputuser)
+$querystring ='insert INTO incident (twitterid,twitterurl,twittercode,latitude,longtude,address,datadate,inputuser)
  VALUES (
-"'.$_GET["twitterid"].'",
+"'.$twitterid.'",
+"'.$_GET["twitterurl"].'",
 "'.addslashes($_GET["twittercode"]).'",
 "'.$latitude.'",
 "'.$longtude.'",
